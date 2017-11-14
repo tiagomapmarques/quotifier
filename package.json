@@ -1,0 +1,28 @@
+{
+  "name": "quotifier",
+  "version": "1.0.0",
+  "description": "Functions to recursively add and remove quotes to strings inside objects or arrays",
+  "main": "./lib/index.js",
+  "scripts": {
+    "build": "tsc -p ./tsconfig.json",
+    "lint": "tslint -p tsconfig.lint.json -c tslint.json -e **/node_modules/**",
+    "test": "jest --no-cache --config jest.json",
+    "test:watch": "jest --no-cache --config jest.json --watchAll"
+  },
+  "author": "Tiago Marques",
+  "license": "MIT",
+  "repository": "https://github.com/tiagomapmarques/quotifier",
+  "dependencies": {
+    "isarray": "~2.0",
+    "quote": "~0.4",
+    "unquote": "~1.1"
+  },
+  "devDependencies": {
+    "@types/jest": "~21.1",
+    "jest": "~21.2",
+    "ts-jest": "~21.1",
+    "tslint": "~5.8",
+    "tslint-config-standard": "~7.0",
+    "typescript": "~2.6"
+  }
+}
