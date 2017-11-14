@@ -1,2 +1,2 @@
 
-import './src/quotifier';
+export * from './src/quotifier';
