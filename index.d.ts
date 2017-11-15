@@ -1,9 +1,16 @@
 
-export type QuotifierObjectNonIterable = string | QuotifierObject;
-export type QuotifierObjectValue = QuotifierArray | QuotifierObjectNonIterable;
+declare module 'quotify' {
+  interface ValueObject {
+    [key: string]: Value;
+  }
+  type NonIterable = string | ValueObject;
 
-export type QuotifierArray = QuotifierObjectNonIterable[];
-export type QuotifierObject = { [key: string]: QuotifierObjectValue };
-export type QuotifierArrayOrObject = QuotifierObject | QuotifierArray;
+  type Value = ValueArray | NonIterable;
 
-export type IteratorHandler = (value: QuotifierObjectValue) => QuotifierObjectValue;
+  type ValueArray = NonIterable[];
+
+  type ValueObjectOrArray = ValueObject | ValueArray;
+
+  const quotifier: (element: ValueObjectOrArray) => ValueObjectOrArray;
+  const unquotifier: (element: ValueObjectOrArray) => ValueObjectOrArray;
+}
