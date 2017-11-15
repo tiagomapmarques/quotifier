@@ -1,4 +1,5 @@
-import { quotifier, unquotifier } from './quotifier';
+import * as js from '../lib';
+import * as ts from './';
 
 describe('quotifier', () => {
   const testData = [
@@ -37,11 +38,25 @@ describe('quotifier', () => {
   ];
 
   testData.forEach(({ test, input, output }) => {
-    it(`quotify ${test}`, () => {
-      expect(quotifier(input)).toEqual(output);
-    });
-    it(`unquotify ${test}`, () => {
-      expect(unquotifier(output)).toEqual(input);
+    describe(test, () => {
+      describe('on typescript', () => {
+        it(`quotify works`, () => {
+          expect(ts.quotifier(input)).toEqual(output);
+        });
+
+        it(`unquotify works`, () => {
+          expect(ts.unquotifier(output)).toEqual(input);
+        });
+      });
+
+      describe('on javascript', () => {
+        it(`quotify works`, () => {
+          expect(js.quotifier(input)).toEqual(output);
+        });
+        it(`unquotify works`, () => {
+          expect(js.unquotifier(output)).toEqual(input);
+        });
+      });
     });
   });
 });
