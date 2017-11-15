@@ -4,6 +4,10 @@
     "src/**/*.{ts}"
   ],
   "coverageDirectory": "<rootDir>/coverage",
+  "coveragePathIgnorePatterns": [
+    "node_modules/",
+    "src/types.ts"
+  ],
   "coverageReporters": [
     "json",
     "lcov"
