@@ -1,5 +1,5 @@
 
-declare module 'quotify' {
+declare module 'quotifier' {
   interface ValueObject {
     [key: string]: Value;
   }
