@@ -1,6 +1,6 @@
 {
   "name": "quotifier",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Functions to recursively add and remove quotes to strings inside objects or arrays",
   "main": "./lib/index.js",
   "scripts": {
